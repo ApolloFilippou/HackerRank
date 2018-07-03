@@ -1,0 +1,41 @@
+import random
+
+def roll_die(dice):
+    roll = random.random()
+    die = 1
+    tot = 0
+    for d in dice:
+        tot += d
+        if roll<tot:
+            return die
+        die += 1
+            
+def play_games(dice, ladders, snakes):
+    games = []
+    for _ in range(5000):
+        rolls = 0
+        position = 1
+        ladder_start = [ladder[0] for ladder in ladders]
+        snake_start = [snake[0] for snake in snakes]
+        while rolls<1000:
+            die = roll_die(dice)
+            rolls += 1
+            position += die
+            if position>100:
+                position -= die
+            elif position==100:
+                games.append(rolls)
+                break
+            elif position in ladder_start:
+                position = ladders[ladder_start.index(position)][1]
+            elif position in snake_start:
+                position = snakes[snake_start.index(position)][1]      
+    return round(sum(games)/len(games))
+    
+for _ in range(int(input())):
+    dice = [float(x) for x in input().split(',')]
+    l, s = [int(x) for x in input().split(',')]
+    ladders = [list(map(int, pair.split(','))) for pair in input().split(' ')]
+    snakes = [list(map(int, pair.split(','))) for pair in input().split(' ')]
+    result = play_games(dice, ladders, snakes)
+    print(result)
