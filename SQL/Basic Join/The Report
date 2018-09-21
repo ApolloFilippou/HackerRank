@@ -1,0 +1,7 @@
+SELECT 
+(CASE WHEN grade<8 THEN 'NULL'
+ELSE s.name
+END),
+g.grade, s.marks from students s, grades g 
+WHERE marks BETWEEN g.min_mark AND g.max_mark
+ORDER BY grade DESC, name
