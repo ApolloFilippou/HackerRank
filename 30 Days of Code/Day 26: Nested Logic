@@ -1,0 +1,18 @@
+D, M, Y = [int(x) for x in input().split()]
+d, m, y = [int(x) for x in input().split()]
+
+if Y>y:
+    fine = 10000
+elif Y==y:
+    if M>m:
+        fine = 500*(M-m)
+    elif M==m:
+        if D>d:
+            fine = 15*(D-d)
+        else:
+            fine = 0
+    else:
+        fine=0
+else:
+    fine=0
+print(fine)
