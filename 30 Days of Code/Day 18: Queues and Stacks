@@ -1,0 +1,17 @@
+class Solution:
+    def __init__(self):
+        self.mystack = list()
+        self.myqueue = list()
+        return None
+    
+    def pushCharacter(self, c):
+        self.mystack.append(c)
+        
+    def popCharacter(self):
+        return self.mystack.pop()
+        
+    def enqueueCharacter(self, c):
+        self.myqueue.append(c)
+        
+    def dequeueCharacter(self):
+        return self.myqueue.pop(0)
