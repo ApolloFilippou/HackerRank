@@ -1,0 +1,10 @@
+from scipy.stats.stats import pearsonr
+
+
+for _ in range(int(input())):
+    N = int(input())
+    gpa = [float(x) for x in input().split()]
+    tests = [[float(x) for x in input().split()] for _ in range(5)]
+    
+    cor = [pearsonr(gpa,test)[0] if sum(test)!=N*test[0] else 0 for test in tests]
+    print(cor.index(max(cor))+1)
