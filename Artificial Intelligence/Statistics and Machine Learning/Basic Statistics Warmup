@@ -1,0 +1,14 @@
+import numpy as np
+from collections import Counter
+from math import sqrt
+
+N= int(input())
+X = np.array(input().split(), int)
+n = len(X)
+
+print(np.mean(X))
+print(np.median(X))
+count = sorted(Counter(X).items(), key= lambda x: (-x[1],x[0]))[0][0]
+print(count)
+print(round(np.std(X),1))
+print(round(np.mean(X)-1.96*np.std(X)/sqrt(n),1), round(np.mean(X)+1.96*np.std(X)/sqrt(n),1))
