@@ -1,0 +1,14 @@
+physics = [15,12,8,8,7,7,7,6,5,3]
+history = [10,25,17,11,13,17,20,13,9,15]
+
+def pearson(l1, l2):
+    n = len(l1)
+    Sx = sum(l1)
+    Sy = sum(l2)
+    Sxy = sum([x*y for x,y in zip(l1,l2)])
+    Sx2 = sum([x**2 for x in l1])
+    Sy2 = sum([y**2 for y in l2])
+    result = (n*Sxy-Sx*Sy)/(pow((n*Sx2-pow(Sx,2))*(n*Sy2-pow(Sy,2)),0.5))
+    return result
+    
+print(pearson(physics,history))
