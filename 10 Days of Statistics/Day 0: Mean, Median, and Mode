@@ -1,0 +1,20 @@
+N = int(input())
+X = list(map(int, input().split()))
+
+X.sort()
+mean = sum(X)/len(X)
+median = X[int(len(X)/2)] if len(X)%2 else (X[int(len(X)/2-1)]+X[int(len(X)/2)])/2
+counts = {}
+for num in X:
+    counts[num] = counts.get(num, 0) + 1
+mode = 0
+freq = 0
+for val, count in counts.items():
+    if count>freq:
+        mode = val
+        freq = count
+    elif count==freq and val<mode:
+        mode = val
+print(mean)
+print(median)
+print(mode)
