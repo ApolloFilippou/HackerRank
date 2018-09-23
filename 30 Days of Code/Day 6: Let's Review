@@ -1,0 +1,11 @@
+S = [str(input()) for j in range(int(input()))]
+
+for s in S:
+    odd = []
+    even = []
+    for i in range(len(s)):
+        if i%2:
+            odd.append(s[i])
+        else:
+            even.append(s[i])
+    print(''.join(even), ''.join(odd))
