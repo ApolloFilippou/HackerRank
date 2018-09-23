@@ -1,0 +1,15 @@
+n = int(input())
+phonebook = {}
+for i in range(n):
+    s = input().strip().split()
+    phonebook[s[0]] = s[1]
+    
+while True:
+    try:
+        q = input()
+        if q in phonebook:
+            print('%s=%s' %(q,phonebook[q]))
+        else:
+            print('Not found')
+    except:
+        break
