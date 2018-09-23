@@ -1,0 +1,26 @@
+def nextMove(n,r,c,grid):
+    for i in range(n):
+        for j in range(n):
+            if grid[i][j]=='p':
+                row = i
+                col = j
+    v = row-r
+    h = col-c
+    if abs(v)>=abs(h):
+        if v>=0:
+            return 'DOWN'
+        else:
+            return 'UP'
+    else:
+        if h>=0:
+            return 'RIGHT'
+        else:
+            return 'LEFT'
+
+n = int(input())
+r,c = [int(i) for i in input().strip().split()]
+grid = []
+for i in range(0, n):
+    grid.append(input())
+
+print(nextMove(n,r,c,grid))
