@@ -1,0 +1,13 @@
+n = int(input())
+X = [float(x) for x in input().split()]
+Y = [float(y) for y in input().split()]
+
+Xsort = sorted(X)
+Ysort = sorted(Y)
+
+for x,y in zip(Xsort,Ysort):
+    X[X.index(x)] = Xsort.index(x)
+    Y[Y.index(y)] = Ysort.index(y)
+    
+r = 1 - 6*sum([(x-y)**2 for x,y in zip(X,Y)])/(n**3-n)
+print(round(r,3))
