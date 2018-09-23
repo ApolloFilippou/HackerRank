@@ -1,0 +1,12 @@
+n = int(input())
+X = [float(x) for x in input().split()]
+Y = [float(y) for y in input().split()]
+
+mX = sum(X)/len(X)
+mY = sum(Y)/len(Y)
+
+sX = pow(sum([pow(x-mX,2) for x in X])/n, 0.5)
+sY = pow(sum([pow(y-mY,2) for y in Y])/n, 0.5)
+
+r = sum([(x-mX)*(y-mY) for x,y in zip(X,Y)])/(n*sX*sY)
+print(round(r,3))
