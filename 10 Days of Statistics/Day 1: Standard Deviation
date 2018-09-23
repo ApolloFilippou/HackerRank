@@ -1,0 +1,11 @@
+N = int(input())
+X = [int(i) for i in input().strip().split()]
+
+mean = sum(X)/len(X)
+
+sq = []
+for x in X:
+    sq.append((x-mean)**2)
+    
+std = (sum(sq)/len(sq))**0.5
+print(round(float(std), 1))
