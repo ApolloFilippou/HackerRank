@@ -1,0 +1,11 @@
+import math
+l = 2.5
+k = 5
+
+def poisson(k, l):
+    return (pow(l, k)*pow(math.exp(1), -l))/fact(k)
+
+def fact(n):
+    return 1 if n==0 else n*fact(n-1)
+
+print(round(poisson(k,l), 3))
