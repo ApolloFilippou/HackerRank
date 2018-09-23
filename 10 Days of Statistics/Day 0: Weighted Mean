@@ -1,0 +1,7 @@
+N = int(input())
+X = list(map(int, input().split()))
+W = list(map(int, input().split()))
+
+mean = round(sum([(x*w) for x, w in zip(X, W)])/sum(W),1)
+
+print(mean)
