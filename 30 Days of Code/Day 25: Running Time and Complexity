@@ -1,0 +1,10 @@
+for _ in range(int(input())):
+    num = int(input())
+    result = 'Prime'
+    for i in range(2,int(pow(num,0.5))+1):
+        if num%i==0:
+            result = 'Not prime'
+            break
+    if num == 1:
+        result = 'Not prime'
+    print(result)
