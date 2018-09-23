@@ -1,0 +1,41 @@
+import random
+import math
+
+def nextMove(posr, posc, board):
+    j=0
+    for i in range(len(board)):
+        if 'd' in board[i]:
+            j = board[i].index('d')
+            break
+    v = i-posr
+    h = j-posc
+    if i-posr==0 and j-posc==0:
+        print('CLEAN')
+        board[posr][posc]='-'
+        dr = math.floor(random.random()*5)
+        dc = math.floor(random.random()*5)
+        board[dr][dc] = 'd'
+    elif h>0:
+        print('RIGHT')
+        board[posr][posc]='-'
+        posc += 1
+    elif h<0:
+        print('LEFT')
+        board[posr][posc]='-'
+        posc -= 1
+    elif v>0:
+        print('DOWN')
+        board[posr][posc]='-'
+        posr += 1
+    elif v<0:
+        print('UP')
+        board[posr][posc]='-'
+        posr -= 1
+    if board[posr][posc]!='d':
+        board[posr][posc]='b'
+
+
+if __name__ == "__main__":
+    pos = [int(i) for i in input().strip().split()]
+    board = [[j for j in input().strip()] for i in range(5)]
+    nextMove(pos[0], pos[1], board)
