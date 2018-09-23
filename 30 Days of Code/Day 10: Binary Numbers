@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+n = int(input())
+
+b = format(n, 'b')
+b_list = list(b)
+i = 0
+most = 1 if '1' in b else 0
+while i<len(b):
+    if b[i] == '1':
+        j = i+1
+        while j<len(b):
+            if b[j] == '1':
+                if j-i+1 > most:
+                    most = j-i+1
+                j += 1
+            else:
+                break
+    i += 1
+print(most)
