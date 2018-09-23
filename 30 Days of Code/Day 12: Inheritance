@@ -1,0 +1,19 @@
+class Student(Person):
+
+    def __init__(self, firstName, lastName, idNumber, scores):
+        super().__init__(firstName, lastName, idNumber)
+        self.scores = scores
+
+    def calculate(self):
+        if sum(self.scores)/len(self.scores)>=90:
+            return 'O'
+        elif sum(self.scores)/len(self.scores)>=80:
+            return 'E'
+        elif sum(self.scores)/len(self.scores)>=70:
+            return 'A'
+        elif sum(self.scores)/len(self.scores)>=55:
+            return 'P'
+        elif sum(self.scores)/len(self.scores)>=40:
+            return 'D'
+        else:
+            return 'T'
