@@ -1,0 +1,38 @@
+n= int(input())
+X = [int(i) for i in input().strip().split()]
+F = [int(i) for i in input().strip().split()]
+
+S = []
+for x, f in zip(X,F):
+    S.extend([x for i in range(f)])
+S.sort()
+
+if len(S)%2==1:
+    S1 = S[:len(S)//2]
+    S3 = S[len(S)//2+1:]
+    
+    if len(S1)%2==1:
+        Q1 = S1[len(S1)//2]
+    else:
+        Q1 = (S1[len(S1)//2-1]+S1[len(S1)//2])/2
+    
+    if len(S3)%2==1:
+        Q3 = S3[len(S3)//2]
+    else:
+        Q3 = (S3[len(S3)//2-1]+S3[len(S3)//2])/2
+        
+else:
+    S1 = S[:len(S)//2]
+    S3 = S[len(S)//2+2:]
+    
+    if len(S1)%2==1:
+        Q1 = S1[len(S1)//2]
+    else:
+        Q1 = (S1[len(S1)//2-1]+S1[len(S1)//2])/2
+    
+    if len(S3)%2==1:
+        Q3 = S3[len(S3)//2]
+    else:
+        Q3 = (S3[len(S3)//2-1]+S3[len(S3)//2])/2
+        
+print(round(float(Q3-Q1), 1))
