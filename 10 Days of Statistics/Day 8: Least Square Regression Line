@@ -1,0 +1,15 @@
+X = [95,85,80,70,60]
+Y = [85,95,70,65,70]
+
+sX = sum(X)
+sY = sum(Y)
+mX = sX/5
+mY = sY/5
+
+sX2 = sum([x**2 for x in X])
+sXY = sum([x*y for x,y in zip(X,Y)])
+
+b = (5*sXY - sX*sY)/(5*sX2 - sX**2)
+a = mY - b*mX
+
+print(round(a + b*80, 3))
