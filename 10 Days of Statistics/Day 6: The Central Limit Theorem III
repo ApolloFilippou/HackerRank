@@ -1,0 +1,4 @@
+low = 500 - 1.96*8
+high = 500 + 1.96*8
+print(round(low,2))
+print(round(high,2))
