@@ -1,0 +1,14 @@
+def fact(n):
+    return 1 if n==0 else n*fact(n-1)
+
+def comb(n, x):
+    return fact(n)/(fact(x) * fact(n-x))
+
+def b(x, n, p):
+    return comb(n, x)*pow(p, x)*pow(1-p, n-x)
+
+total = 0
+for i in range(3,7):
+    total += b(i, 6, 1.09/2.09)
+    
+print('%.3f' %total)
