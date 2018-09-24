@@ -1,0 +1,13 @@
+from collections import OrderedDict
+N = int(input())
+d = OrderedDict()
+for _ in range(N):
+    a = input().split()
+    price = a.pop()
+    item = ' '.join(a)
+    if item not in d:
+        d[item] = int(price)
+    else:
+        d[item] += int(price)
+for x,y in d.items():
+    print(x,y)
