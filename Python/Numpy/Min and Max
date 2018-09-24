@@ -1,0 +1,6 @@
+import numpy
+
+N, M = map(int, input().split())
+
+A = [numpy.array(input().split(), int) for _ in range(N)]
+print(numpy.max(numpy.min(A, axis=1)))
