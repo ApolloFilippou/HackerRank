@@ -1,0 +1,7 @@
+K = int(input())
+rooms = input().split()
+
+rooms.sort()
+a = set([rooms[i] for i in range(0,len(rooms),2)])
+b = set([rooms[i] for i in range(1,len(rooms),2)])
+print(list(a.symmetric_difference(b))[0])
