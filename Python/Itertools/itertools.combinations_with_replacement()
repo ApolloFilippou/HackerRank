@@ -1,0 +1,5 @@
+a, b = input().split()
+from itertools import combinations_with_replacement
+
+for x in combinations_with_replacement(sorted(a), int(b)):
+    print(''.join(x))
