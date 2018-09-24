@@ -1,0 +1,5 @@
+import numpy
+
+A = [numpy.array(input().split(), float) for _ in range(int(input()))]
+numpy.set_printoptions(legacy='1.13')
+print(numpy.linalg.det(A))
