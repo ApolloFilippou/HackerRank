@@ -1,0 +1,6 @@
+import numpy
+
+dims = list(map(int, input().split()))
+
+print(numpy.zeros(dims, dtype=numpy.int))
+print(numpy.ones(dims, dtype=numpy.int))
