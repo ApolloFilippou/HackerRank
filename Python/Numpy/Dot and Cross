@@ -1,0 +1,6 @@
+import numpy
+
+N = int(input())
+A, B = [[numpy.array(input().split(), int) for _ in range(N)] for _ in range(2)]
+
+print(numpy.dot(A,B))
