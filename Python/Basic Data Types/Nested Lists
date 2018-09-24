@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    scores = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        scores.append([name,score])
+        
+    scores = sorted(scores, key= lambda x:x[1])
+    for i in scores:
+        if i[1]>scores[0][1]:
+            second = i[1]
+            break
+    
+    scores = sorted(scores, key= lambda x:x[0])
+    for i in scores:
+        if i[1]== second:
+            print(i[0])
