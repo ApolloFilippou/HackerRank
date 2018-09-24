@@ -1,0 +1,4 @@
+import re 
+x, k = [int(x) for x in input().split()]
+s = input().replace('x',str(x))
+print(eval(s)==k)
