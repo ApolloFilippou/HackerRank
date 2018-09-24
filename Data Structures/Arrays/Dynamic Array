@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the dynamicArray function below.
+#
+def dynamicArray(n, queries):
+    lastAnswer = 0
+    S = [[] for _ in range(n)]
+    for querie in queries:
+        seq = (querie[1]^lastAnswer)%n
+        if querie[0] == 1:
+            S[seq].append(querie[2])
+        else:
+            idx = querie[2]%len(S[seq])
+            lastAnswer = S[seq][idx]
+            print(lastAnswer)
+
+
+
+nq = input().split()
+
+n = int(nq[0])
+
+q = int(nq[1])
+
+queries = []
+
+for _ in range(q):
+    queries.append(list(map(int, input().rstrip().split())))
+
+dynamicArray(n, queries)
