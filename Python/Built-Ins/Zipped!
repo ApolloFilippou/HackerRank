@@ -1,0 +1,9 @@
+N, X = [int(x) for x in input().split()]
+subject = []
+for _ in range(X):
+    subject.append(list(map(float, input().split())))
+for j in range(N):
+    avg = 0
+    for i in range(X):
+        avg += subject[i][j]
+    print(avg/X)
