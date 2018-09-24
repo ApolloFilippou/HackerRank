@@ -1,0 +1,5 @@
+from collections import namedtuple
+N = int(input())
+fields = input().split()
+marks = fields.index('MARKS')
+print(sum([int(input().split()[marks]) for _ in range(N)])/N)
