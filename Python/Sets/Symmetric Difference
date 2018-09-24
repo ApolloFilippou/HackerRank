@@ -1,0 +1,9 @@
+N = int(input())
+n = list(map(int, input().split()))
+M = int(input())
+m = list(map(int, input().split()))
+
+n_m = sorted(list(set(n).difference(set(m)).union(set(m).difference(set(n)))))
+
+for i in n_m:
+    print(i)
