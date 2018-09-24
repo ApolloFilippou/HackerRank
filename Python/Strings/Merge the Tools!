@@ -1,0 +1,9 @@
+def merge_the_tools(string, k):
+    d = len(string)//k
+    t = [string[i:i+k] for i in range(0, len(string), k)]
+    for i in range(d):
+        u = ''
+        for c in t[i]:
+            if c not in u:
+                u += c
+        print(u)
