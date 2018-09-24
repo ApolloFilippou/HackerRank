@@ -1,0 +1,11 @@
+A = set(map(int, input().split()))
+N = int(input())
+superset = True
+for _ in range(N):
+    cur = set(map(int, input().split()))
+    if any(s not in cur for s in A) and all(s in A for s in cur):
+        continue
+    else:
+        superset = False
+        break
+print(superset)
