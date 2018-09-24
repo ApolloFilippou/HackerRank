@@ -1,0 +1,11 @@
+from collections import Counter
+
+N = int(input())
+shoes = Counter(list(map(int, input().split())))
+profit = 0
+for i in range(int(input())):
+    size, price = [int(x) for x in input().split()]
+    if shoes[size]>0:
+        shoes[size] -= 1
+        profit += price
+print(profit)
