@@ -1,0 +1,26 @@
+def closestNumbers(arr):
+    arr.sort()
+    close = arr[-1]
+    pairs = []
+    for i in range(len(arr)-1):
+        if abs(arr[i]-arr[i+1])<close:
+            close = abs(arr[i]-arr[i+1])
+    for i in range(len(arr)-1):
+        if abs(arr[i]-arr[i+1])==close:
+            pairs.append(arr[i])
+            pairs.append(arr[i+1])
+    return pairs
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = closestNumbers(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
