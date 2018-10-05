@@ -1,0 +1,28 @@
+def gridChallenge(grid):
+    for i in range(len(grid)):
+        grid[i] = sorted(list(grid[i]), key= lambda x: ord(x))
+    for j in range(len(grid)):
+        for i in range(len(grid)-1):
+            if ord(grid[i][j])>ord(grid[i+1][j]):
+                return 'NO'
+    return 'YES'
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        n = int(input())
+
+        grid = []
+
+        for _ in range(n):
+            grid_item = input()
+            grid.append(grid_item)
+
+        result = gridChallenge(grid)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
