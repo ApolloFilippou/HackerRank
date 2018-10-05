@@ -1,0 +1,37 @@
+def acmTeam(topic):
+    teams = []
+    for i in range(len(topic)-1):
+        for j in range(i+1, len(topic)):
+            temp = ''
+            for x, y in zip(topic[i], topic[j]):
+                if x=='1' or y=='1':
+                    temp += '1'
+                else:
+                    temp += '0'
+            teams.append(temp)
+    topics = [team.count('1') for team in teams]
+    most = max(topics)
+    pairs = topics.count(most)
+    return most, pairs
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    topic = []
+
+    for _ in range(n):
+        topic_item = input()
+        topic.append(topic_item)
+
+    result = acmTeam(topic)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
