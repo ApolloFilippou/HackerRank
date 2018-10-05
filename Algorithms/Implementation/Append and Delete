@@ -1,0 +1,33 @@
+def appendAndDelete(s, t, k):
+    moves = len(s)+len(t)
+    match = 0
+    for i in range(min(len(s),len(t))):
+        if s[i] == t[i]:
+            match += 1
+        else:
+            break
+    moves -= 2*match
+    if k>len(s)+len(t):
+        return 'Yes'
+    elif moves<=k:
+        if (k-moves)%2==0:
+            return 'Yes'
+        else:
+            return 'No'
+    else:
+        return 'No'
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    t = input()
+
+    k = int(input())
+
+    result = appendAndDelete(s, t, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
