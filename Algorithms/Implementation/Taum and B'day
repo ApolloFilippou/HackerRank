@@ -1,0 +1,30 @@
+def taumBday(b, w, bc, wc, z):
+    cost_black = (wc+z)*b if bc>wc+z else b*bc
+    cost_white = (bc+z)*w if wc>bc+z else w*wc
+    return cost_black+cost_white
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        bw = input().split()
+
+        b = int(bw[0])
+
+        w = int(bw[1])
+
+        bcWcz = input().split()
+
+        bc = int(bcWcz[0])
+
+        wc = int(bcWcz[1])
+
+        z = int(bcWcz[2])
+
+        result = taumBday(b, w, bc, wc, z)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
