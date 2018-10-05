@@ -1,0 +1,20 @@
+def pageCount(n, p):
+    start = p//2
+    if n%2==0:
+        end = (n-p+1)//2
+    else:
+        end = (n-p)//2
+    return min(start, end)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    p = int(input())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
