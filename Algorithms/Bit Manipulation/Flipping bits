@@ -1,0 +1,26 @@
+def flippingBits(N):
+    num = []
+    for i in range(32):
+        num.append(N//pow(2,(31-i)))
+        N %= pow(2,(31-i))
+    print(num)
+    for i in range(len(num)):
+        if num[i]==1:
+            num[i]=str(0)
+        else:
+            num[i]=str(1)
+    return int(''.join(num),2)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    T = int(input())
+
+    for T_itr in range(T):
+        N = int(input())
+
+        result = flippingBits(N)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
