@@ -1,0 +1,17 @@
+def solve(a):
+    l = len(a)
+    right = sum(a)
+    left = 0
+    for i in range(len(a)):
+        right -= a[i]
+        if right==left:
+            return 'YES'
+        left += a[i]
+    return 'NO'
+
+T = int(input().strip())
+for a0 in range(T):
+    n = int(input().strip())
+    a = list(map(int, input().strip().split(' ')))
+    result = solve(a)
+    print(result)
