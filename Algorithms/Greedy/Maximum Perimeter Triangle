@@ -1,0 +1,15 @@
+def maximumPerimeterTriangle(sticks):
+    sticks = sorted(sticks)
+    i = len(sticks)-3
+    while i>=0 and sticks[i+2]>=sticks[i+1]+sticks[i]:
+        i -= 1
+    if i>=0:
+        print(sticks[i],sticks[i+1],sticks[i+2])
+    else:
+        print(-1)
+
+n = int(input())
+
+sticks = list(map(int, input().rstrip().split()))
+
+maximumPerimeterTriangle(sticks)
