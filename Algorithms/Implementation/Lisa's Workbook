@@ -1,0 +1,29 @@
+def workbook(n, k, arr):
+    page = 1
+    special = 0
+    for chapter in range(n):
+        last = 0
+        while last<arr[chapter]:
+            first = last + 1
+            last = first + min(k-1, arr[chapter]-first)
+            if page in range(first, last+1):
+                special += 1
+            page += 1
+    return special
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = workbook(n, k, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
