@@ -1,0 +1,29 @@
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+count = 0
+nums = list(map(int,input().strip().split(' ')))
+remainder_list = []
+for i in range(len(nums)):
+    remainder_list.append(nums[i] % k) # taking all the remainders
+
+if 0 in remainder_list:
+    count+=1
+remainder_list = [x for x in remainder_list if x!=0]
+counter = [0]*k
+for i in range(len(remainder_list)):
+    counter[remainder_list[i]] += 1
+
+index = []
+
+for i in range(len(counter)):
+    maxCount = max(counter)
+    maxIndex = counter.index(maxCount)
+    if k-maxIndex not in index and maxCount !=0 :
+        index.append(maxIndex)
+        if maxIndex*2 % k==0:
+            count+=1
+        else:
+            count += maxCount
+            
+    counter[maxIndex] = 0
+print(count)
