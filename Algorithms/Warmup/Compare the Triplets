@@ -1,0 +1,23 @@
+def solve(a, b):
+    points_a = 0
+    points_b = 0
+    for x, y in zip(a, b):
+        if x>y:
+            points_a += 1
+        elif x<y:
+            points_b += 1
+    return points_a, points_b
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = solve(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
