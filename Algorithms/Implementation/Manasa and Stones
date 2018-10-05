@@ -1,0 +1,19 @@
+def stones(n, a, b):
+    values = []
+    for i in range(n):
+        values.append((n-i-1)*a+i*b)
+    values = sorted(list(set(values)))
+    values = ' '.join(str(value) for value in values)
+    return values
+
+T = int(input())
+
+for T_itr in range(T):
+    n = int(input())
+
+    a = int(input())
+
+    b = int(input())
+
+    result = stones(n, a, b)
+    print(result)
