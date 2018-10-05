@@ -1,0 +1,13 @@
+def bigSorting(unsorted):
+    for s in sorted(unsorted, key=int):
+        print(s)
+        
+n = int(input())
+
+unsorted = []
+
+for _ in range(n):
+    unsorted_item = input()
+    unsorted.append(unsorted_item)
+
+bigSorting(unsorted)
