@@ -1,0 +1,19 @@
+def strangeCounter(t):
+    time = 0
+    i = 0
+    while time<t:
+        time += 3*(2**i)
+        i += 1
+    value = 1 + time - t       
+    return value  
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    result = strangeCounter(t)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
