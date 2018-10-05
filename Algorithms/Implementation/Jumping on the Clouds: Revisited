@@ -1,0 +1,27 @@
+def jumpingOnClouds(c, k):
+    e = 100
+    for i in range(int(len(c)/k)):
+        position = (i+1)*k
+        e -= 1
+        if position == len(c):
+            position = 0
+        if c[position] == 1:
+            e -= 2
+    return e
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    c = list(map(int, input().rstrip().split()))
+
+    result = jumpingOnClouds(c, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
