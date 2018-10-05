@@ -1,0 +1,21 @@
+def timeConversion(s):
+    sep = s.split(':')
+    if sep[0] == '12':
+        if s[-2]=='A':
+            sep[0] = '00'
+    else:
+        if s[-2]=='P':
+            sep[0] = str(int(sep[0])+12)
+    return sep[0]+':'+sep[1]+':'+sep[2][:2]
+            
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
