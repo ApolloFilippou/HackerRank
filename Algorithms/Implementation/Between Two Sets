@@ -1,0 +1,7 @@
+def getTotalX(a, b):
+    a.sort()
+    b.sort()
+    total = 0
+    for i in range(a[-1], b[0]+1):
+        if all(i%a1==0 for a1 in a) and all(b1%i==0 for b1 in b):
+            total += 1
