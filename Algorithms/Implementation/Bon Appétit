@@ -1,0 +1,20 @@
+def BonAppetit(k, bill, b):
+    total = sum(bill)
+    anna = (total - bill[k])/2
+    if b==anna:
+        return('Bon Appetit')
+    else:
+        return(int(b-anna))
+        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n,k = map(int,input().split())
+    bill = list(map(int,input().split()))
+    b = int(input())
+
+    result = BonAppetit(k, bill, b)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
