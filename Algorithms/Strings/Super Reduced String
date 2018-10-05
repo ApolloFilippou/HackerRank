@@ -1,0 +1,24 @@
+def super_reduced_string(s):
+    i = 0
+    while True:
+        if s[i]==s[i+1]:
+            s = s[:i]+s[i+2:]
+            print(s)
+            i -= 1 if i>0 else 0
+        else:
+            i += 1
+        if i==len(s)-1:
+            return s
+        if len(s)==0:
+            return 'Empty String'
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = super_reduced_string(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
