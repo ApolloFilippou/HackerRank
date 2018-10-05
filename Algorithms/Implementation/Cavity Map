@@ -1,0 +1,20 @@
+n = int(input())
+
+grid = []
+
+for _ in range(n):
+    grid_item = input()
+    grid.append(grid_item)
+
+for i in range(len(grid)):
+    if i>0:
+        print('')
+    for j in range(len(grid)):
+        if i==0 or j==0 or i==len(grid)-1 or j==len(grid)-1:
+            print(grid[i][j], end='')
+        else:
+            node = grid[i][j]
+            if node>grid[i-1][j] and node>grid[i+1][j] and node>grid[i][j-1] and node>grid[i][j+1]:
+                print('X', end='')
+            else:
+                print(node, end='')
