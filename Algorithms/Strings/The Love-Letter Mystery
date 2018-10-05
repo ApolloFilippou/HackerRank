@@ -1,0 +1,30 @@
+def theLoveLetterMystery(s):
+    count = 0
+    size = len(s)
+    for i in range(size//2):
+        print('i=',i)
+        if ord(s[i])>ord(s[size-1-i]):
+            print(s[i], s[size-1-i])
+            print(ord(s[i]), ord(s[size-1-i]))
+            count += (ord(s[i])-ord(s[size-1-i]))
+            print(count)
+        elif ord(s[i])<ord(s[size-1-i]):
+            print(s[i], s[size-1-i])
+            print(ord(s[i]), ord(s[size-1-i]))
+            count += (ord(s[size-1-i])-ord(s[i]))
+            print(count)
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = theLoveLetterMystery(s)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
