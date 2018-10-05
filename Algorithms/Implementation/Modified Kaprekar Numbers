@@ -1,0 +1,33 @@
+def kaprekarNumbers(p, q):
+    exists = False
+    nums = []
+    for num in range(p,q+1):
+        string = str(num**2)
+        d = len(str(num))
+        if num == 1:
+            nums.append(num)
+        elif len(string)==1:
+            continue
+        elif len(string)==2:
+            if int(string[0])+int(string[1])==num:
+                nums.append(num)
+        elif len(string)%2==0:
+            if int(string[:d]) + int(string[d:]) == num:
+                nums.append(num)
+        else:
+            if int(string[:d-1]) + int(string[d-1:]) == num:
+                nums.append(num)
+
+    if len(nums)==0:
+        print('INVALID RANGE')
+    else:
+        for num in nums:
+            print(num, end=' ')
+
+
+
+p = int(input())
+
+q = int(input())
+
+kaprekarNumbers(p, q)
