@@ -1,0 +1,20 @@
+def makingAnagrams(s1, s2):
+    no_s1 = list(s2)
+    for c in s1:
+        if c in no_s1:
+            no_s1.remove(c)
+    no_common = len(s2)-len(no_s1)
+    return len(s1)+len(s2)-2*no_common
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s1 = input()
+
+    s2 = input()
+
+    result = makingAnagrams(s1, s2)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
