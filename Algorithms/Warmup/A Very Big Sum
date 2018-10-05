@@ -1,0 +1,20 @@
+def aVeryBigSum(ar):
+    sum = 0
+    if len(ar)>=1 and len(ar)<=10:
+        for i in ar:
+            if i>=0 and i<=10**10:
+                sum += i
+        return sum
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = aVeryBigSum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
