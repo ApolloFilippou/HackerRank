@@ -1,0 +1,16 @@
+def minimumAbsoluteDifference(n, arr):
+    arr.sort()
+    return min([abs(arr[i]-arr[i+1]) for i in range(n-1)])
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = minimumAbsoluteDifference(n, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
