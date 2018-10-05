@@ -1,0 +1,28 @@
+def migratoryBirds(ar):
+    counts = [ar.count(1), ar.count(2), ar.count(3),
+              ar.count(4), ar.count(5)]
+    most = max(counts)
+    count = 0
+    for birdtype in counts:
+        if birdtype == most:
+            count += 1
+    if count>1:
+        for i in range(len(counts)):
+            if counts[i]==most:
+                return i+1
+    most = counts.index(max(counts))+1
+    return most
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = migratoryBirds(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
