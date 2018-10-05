@@ -1,0 +1,15 @@
+def jimOrders(orders):
+    serve = []
+    for i in range(len(orders)):
+        serve.append([i+1,orders[i][0]+orders[i][1]])
+    lst = sorted(serve, key=lambda x: x[1])
+    return ' '.join([str(i[0]) for i in lst])
+
+n = int(input())
+
+orders = []
+
+for _ in range(n):
+    orders.append(list(map(int, input().rstrip().split())))
+
+print(jimOrders(orders))
