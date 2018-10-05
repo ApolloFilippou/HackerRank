@@ -1,0 +1,33 @@
+def luckBalance(n, k, contests):
+    contests = sorted(contests)
+    lost = 0
+    points = sum([x for x,y in contests])
+    important = sum([y for x,y in contests])
+    i = 0
+    while important-lost>k and i<len(contests):
+        if contests[i][1]==1:
+            points -= 2*contests[i][0]
+            lost += 1
+        i += 1
+    print(contests)
+    return points        
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    contests = []
+
+    for _ in range(n):
+        contests.append(list(map(int, input().rstrip().split())))
+
+    result = luckBalance(n, k, contests)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
