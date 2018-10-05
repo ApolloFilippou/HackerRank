@@ -1,0 +1,26 @@
+def sockMerchant(n, ar):
+    pairs = 0
+    length = len(ar)
+    n =1
+    for i in range(length):
+        cur = ar[i]
+        for j in range(i+1, length):
+            if ar[j]==cur:
+                pairs += 1
+                ar[j] = 999*n
+                n += 1
+                break
+    return pairs
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = sockMerchant(n, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
