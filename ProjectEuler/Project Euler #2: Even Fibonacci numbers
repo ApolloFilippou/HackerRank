@@ -10,9 +10,7 @@ def fibonacci_even(N):
     current = 2
     while current<N:
         total += current
-        temp_cur = current
-        current = current*4+last
-        last = temp_cur
+        last, current = current, current*4+last
     return total
 
 T = int(input().strip())
