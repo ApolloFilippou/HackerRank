@@ -1,0 +1,16 @@
+def smallest_multiple(N):
+    result = N
+    while True:
+        divide_all = True
+        for i in range(2,N):
+            if result%i != 0:
+                divide_all = False
+                break
+        if divide_all == True:
+            return result 
+        result += N
+
+T = int(input().strip())
+for t in range(T):
+    N = int(input().strip())
+    print(smallest_multiple(N))
