@@ -1,0 +1,16 @@
+def largest_product(num, K):
+    maximum = 0
+    num = str(num)
+    for i in range(len(num)-K+1):
+        total = 1
+        for j in range(i, i+K):
+            total *= int(num[j])
+        maximum = max(maximum, total)
+    return maximum    
+
+T = int(input().strip())
+for t in range(T):
+    N, K = input().strip().split(' ')
+    N, K = [int(N),int(K)]
+    num = input().strip()
+    print(largest_product(num, K))
