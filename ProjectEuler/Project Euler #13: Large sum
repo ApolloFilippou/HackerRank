@@ -1,0 +1,10 @@
+def large_sum(A):
+    a = sum(A)
+    a = int(str(a)[:10])
+    return a
+
+N = int(input().strip())
+A = []
+for _ in range(N):
+    A.append(int(input().strip()))
+print(large_sum(A))
